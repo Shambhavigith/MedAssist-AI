@@ -1,9 +1,6 @@
 from helper import get_embeddings
 from langchain_community.vectorstores import FAISS
 
-
-print("Starting retrieval.py")
-
 def load_vector_store():
     print("Loading embeddings...")
     embedding_model=get_embeddings()
@@ -11,10 +8,6 @@ def load_vector_store():
     db=FAISS.load_local("faiss_index",embedding_model,allow_dangerous_deserialization=True)
     print("FAISS loaded!")
     return db
-
-db = load_vector_store()
-
-print("Searching...")
 
 
 def retrieve_context(db,query,k=3):
@@ -24,11 +17,17 @@ def retrieve_context(db,query,k=3):
     return retrieved_docs
 
 
-retrieved_docs = retrieve_context(
-    db,
-    "What are symptoms of dengue?")
-print("Retrieved:", len(retrieved_docs))
+if __name__ == "__main__":
+    print("Starting retrieval.py")
+    db = load_vector_store()
+    print("Searching...")
+    retrieved_docs = retrieve_context(
+        db,
+        "What are symptoms of dengue?")
+    print("Retrieved:", len(retrieved_docs))
+    for doc in retrieved_docs:
+        print(doc.page_content)
+        print(doc.metadata)
 
-for doc in retrieved_docs:
-    print(doc.page_content)
-    print(doc.metadata)
+
+
