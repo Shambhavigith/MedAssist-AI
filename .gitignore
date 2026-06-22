@@ -10,8 +10,6 @@ env/
 # Environment variables
 .env
 
-# Generated files
-faiss_index/
 
 # VS Code
 .vscode/

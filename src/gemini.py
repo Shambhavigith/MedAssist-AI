@@ -16,10 +16,15 @@ model = genai.GenerativeModel(
 )
 
 
-db = load_vector_store()
+db = None
 
 
 def ask_medassist(query):
+    global db
+    
+    if db is None:
+        db = load_vector_store()
+
     retrieved_docs = retrieve_context(
         db,
         query
