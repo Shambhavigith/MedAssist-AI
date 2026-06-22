@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MedAssist AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>MedAssist AI</h1>
+        <p>Medical Information Assistant</p>
+
+        <form id="chat-form">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Ask a medical question..."
+                required
+            >
+
+            <button type="submit">
+                Send
+            </button>
+
+        </form>
+
+        <div id="response"></div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
