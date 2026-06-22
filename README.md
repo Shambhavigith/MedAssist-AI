@@ -1,5 +1,4 @@
 ---
-
 title: MedAssist AI
 emoji: 🏥
 colorFrom: blue
