@@ -1,3 +1,13 @@
+---
+
+title: MedAssist AI
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
+
 # MedAssist AI
 
 A Retrieval-Augmented Generation (RAG) based medical knowledge assistant built using Flask, LangChain, Hugging Face Embeddings, FAISS, and Google Gemini.
