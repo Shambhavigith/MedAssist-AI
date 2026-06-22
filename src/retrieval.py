@@ -1,4 +1,4 @@
-from helper import get_embeddings
+from src.helper import get_embeddings
 from langchain_community.vectorstores import FAISS
 
 def load_vector_store():
