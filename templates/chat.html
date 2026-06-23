@@ -2,35 +2,153 @@
 <html>
 <head>
     <title>MedAssist AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <header>
+       <nav>
+            <div class="logo">
+                <img
+                    src="{{ url_for('static', filename='images/logo.png') }}"
+                    alt="MedAssist Logo">
 
-    <div class="container">
+                <span>MedAssist AI</span>
 
-        <h1>MedAssist AI</h1>
-        <p>Medical Information Assistant</p>
+            </div>
 
-        <form id="chat-form">
+            <div class="nav-links">
+                <a href="#home">Home</a>
 
-            <input
+                <a href="#about">About</a>
+
+                <a href="#chat">Chat</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <section id="home">
+        
+        <div class="Hero-Content">
+            <h1>
+            Your Friendly AI Health Companion
+            </h1>
+            
+            <p>Ask health questions, understand medical concepts, and learn with confidence — in a space that always feels safe, warm, and kind.</p>
+            <button type="submit">
+                Start Chat
+            </button>
+        </div>
+        <div class="Hero-image">
+            <img
+                src="{{ url_for('static', filename='images/avatar.png') }}"
+                alt="MedAssist Avatar">
+
+        </div>
+       
+
+    </section>
+
+    <section id="chat">
+        <div class="Chat">
+            <form id="chat-form">
+                <input
                 type="text"
                 id="message"
                 placeholder="Ask a medical question..."
-                required
-            >
+                required>
 
-            <button type="submit">
-                Send
-            </button>
+                <button type="submit">
+                    Send
+                </button>
 
-        </form>
+            </form>
 
-        <div id="response"></div>
+            <div id="response">
+                💗 MedAssist is waiting to help...
+            </div>
 
-    </div>
+        </div>
+    </section>
 
+    
+
+    <section id="features">
+
+        <div class="feature-card symptom">
+
+            <div class="card-top">
+                <span class="icon">🌸</span>
+                <span class="badge">Wellness</span>
+            </div>
+
+            <h3>Symptom Guidance</h3>
+
+            <p>
+                Describe how you're feeling and receive calm, clear explanations
+                without overwhelming medical jargon.
+            </p>
+
+            <div class="card-bottom">
+                <span class="stat">⚡ 50k+ queries</span>
+                <a href="#">Learn More →</a>
+            </div>
+
+        </div>
+
+        <div class="feature-card knowledge">
+
+            <div class="card-top">
+                <span class="icon">📚</span>
+                <span class="badge">Education</span>
+            </div>
+
+            <h3>Medical Knowledge</h3>
+
+            <p>
+                Explore conditions, treatments, medications, and health topics
+                explained in a simple and friendly way.
+            </p>
+
+            <div class="card-bottom">
+                <span class="stat">🛡️ 10k+ topics</span>
+                <a href="#">Learn More →</a>
+            </div>
+
+        </div>
+
+        <div class="feature-card trusted">
+
+            <div class="card-top">
+                <span class="icon">✨</span>
+                <span class="badge">AI Powered</span>
+            </div>
+
+            <h3>Trusted AI Answers</h3>
+
+            <p>
+                Responses are grounded in trusted medical references to provide
+                more reliable health information.
+            </p>
+
+            <div class="card-bottom">
+                <span class="stat">🩺 Reliable Sources</span>
+                <a href="#">Learn More →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<footer>
+    Made by Shambhavi
+</footer>
 
 </body>
 </html>
